@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      {{myValue}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <mat-expansion-panel [expanded]="false" hideToggle="true">
+    <mat-expansion-panel-header [collapsedHeight]="'190px'" [expandedHeight]="'190px'">
+      <mat-panel-title>
+        <ion-list>
+          <ion-radio-group [(ngModel)]="myValue">
+            <ion-list-header>
+              <ion-label>Are more details required</ion-label>
+            </ion-list-header>
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="Yes" checked></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="No"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+
+
+</ion-content>
